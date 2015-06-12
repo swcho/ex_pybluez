@@ -52,6 +52,7 @@ class Bluetooth:
 
   def send_input(self, ir):
     #  Convert the hex array to a string
+    print 'send string: ', ir
     hex_str = ""
     for element in ir:
       if type(element) is list:
@@ -65,6 +66,7 @@ class Bluetooth:
         # This is a hex value - we can convert it straight to a char
         hex_str += chr(element)
     # Send an input report
+    print 'send string: ' + hex_str
     self.cinterrupt.send(hex_str)
 
 class Keyboard():
